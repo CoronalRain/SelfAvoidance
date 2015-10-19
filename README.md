@@ -30,6 +30,12 @@ You can interface with the tool in two different ways: through Python and throug
 
 Self-Avoiding Paths Visualizer 1.0
 
+### Terminal
+
+The Self-Avoiding Walks Visualizer can also be used from the terminal/command prompt. In order to see the documentation for this, run the following command.
+
+> python selfavoiding.py --help
+
     Usage:
       selfavoiding.py [options]
       selfavoiding.py (-h | --help)
@@ -45,9 +51,3 @@ Self-Avoiding Paths Visualizer 1.0
       -h --help            Show this screen.
       -v --verbose         Show runtime info.
       --version            Show version.
-
-### Terminal
-
-The Self-Avoiding Walks Visualizer can also be used from the terminal/command prompt. In order to see the documentation for this, run the following command.
-
-> python selfavoiding.py --help
