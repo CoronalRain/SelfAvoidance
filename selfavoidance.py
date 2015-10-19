@@ -1,5 +1,5 @@
 """
-Self Avoidance 1.0
+Self-Avoiding Paths Visualizer 1.0
 
 Usage:
   selfavoiding.py [options]
@@ -69,8 +69,34 @@ def run(n):
     
     return sequence
 
+def update(data):
+    global sequence, grid, i, j, counter
+    newGrid = grid.copy()
+    
+    counter += 1
+    move = sequence[counter-2]
+    if move != "Stay" and verbose:
+        print "%s," % move,
+    if move == "North":
+        i = i-1
+    elif move == "East":
+        j = j+1
+    elif move == "South":
+        i = i+1
+    elif move =="West":
+        j = j-1
+    else:
+        counter -= 1
+    
+    newGrid[i,j] = counter
+    
+    mat.set_data(newGrid)
+    grid = newGrid
+    
+    return [mat]
+
 if __name__ == "__main__":
-    arguments = docopt(__doc__, version = "Self Avoidance 1.0")
+    arguments = docopt(__doc__, version = "Self-Avoiding Paths Visualizer 1.0")
     n = int(arguments["--size"])
     cmap = arguments["--cmap"]
     ms = int(arguments["--ms"])
@@ -82,32 +108,6 @@ if __name__ == "__main__":
     i = n/2
     j = n/2
     grid[i,j] = counter
-    
-    def update(data):
-        global sequence, grid, i, j, counter
-        newGrid = grid.copy()
-        
-        counter += 1
-        move = sequence[counter-2]
-        if move != "Stay" and verbose:
-            print "%s," % move,
-        if move == "North":
-            i = i-1
-        elif move == "East":
-            j = j+1
-        elif move == "South":
-            i = i+1
-        elif move =="West":
-            j = j-1
-        else:
-            counter -= 1
-        
-        newGrid[i,j] = counter
-        
-        mat.set_data(newGrid)
-        grid = newGrid
-        
-        return [mat]
     
     fig, ax = plt.subplots()
     mat = ax.matshow(grid, cmap=plt.get_cmap(cmap), vmin=0, vmax=len(sequence))
