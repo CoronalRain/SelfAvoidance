@@ -7,12 +7,14 @@ Usage:
   selfavoiding.py --version
 
 Options:
+  -l --lower <int>     Sets a lower bound on the length of the random walk.
+                       [default: 0]
   -n --size <int>      Width/Height of the lattice containing the random walk.
                        [default: 51]
-  -c --cmap <string>   Colormap to use.
-                       [default: jet]
   -m --ms <int>        Milliseconds between frames in the animation.
                        [default: 50]
+  -c --cmap <string>   Colormap to use.
+                       [default: jet]
   -h --help            Show this screen.
   -v --verbose         Show runtime info.
   --version            Show version.
@@ -97,12 +99,15 @@ def update(data):
 
 if __name__ == "__main__":
     arguments = docopt(__doc__, version = "Self-Avoiding Paths Visualizer 1.0")
+    l = int(arguments["--lower"])
     n = int(arguments["--size"])
-    cmap = arguments["--cmap"]
     ms = int(arguments["--ms"])
+    cmap = arguments["--cmap"]
     verbose = arguments["--verbose"]
     
     sequence = run(n)
+    while len(sequence) < l:
+        sequence = run(n)
     counter = 1
     grid = np.zeros((n,n))
     i = n/2

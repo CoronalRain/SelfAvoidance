@@ -36,16 +36,26 @@ The Self-Avoiding Walks Visualizer should be used from the terminal/command prom
       selfavoiding.py --version
     
     Options:
+	  -l --lower <int>     Sets a lower bound on the length of the random walk.
+                           [default: 0]
       -n --size <int>      Width/Height of the lattice containing the random walk.
                            [default: 51]
-      -c --cmap <string>   Colormap to use.
-                           [default: jet]
       -m --ms <int>        Milliseconds between frames in the animation.
                            [default: 50]
+      -c --cmap <string>   Colormap to use.
+                           [default: jet]
       -h --help            Show this screen.
       -v --verbose         Show runtime info.
       --version            Show version.
 
+The *l* argument allows the user to have some control over the length of the self-avoiding walk. If *l* is set, then the program will generate self-avoiding walks until one is found that has length greater than or equal to *l*. The default value for *l* is 0, which implies that the first walk will be accepted. However, this may result in very short walks (possibly as short as length 8), so setting the *l* parameter to 50 or 100 may be ideal. If *l* is set to be quite large, a suitable walk may never be found and the program may run indefinitely. This can be counteracted to a degree by setting *n* to be very large as well.
+
+The *n* argument defines the size of the lattice over which the self-avoiding walk takes place. The default, *n=51*, is normally sufficient to contain any walk, assuming *l* is not very large.
+
+The *m* argument defines the number of milliseconds between each frame of the animation. The default is 50, which is usually sufficient for all but the longest self-avoiding walks.
+
+The *c* argument allows the user to change to colormap. The default is "jet", but users are encouraged to try out other colormaps, found [here](http://matplotlib.org/examples/color/colormaps_reference.html).
+
 ### Examples
 
-    > python selfavoidance.py -n 51 -c jet -m 50 --verbose
+    > python selfavoidance.py -l 500 -n 101 --cmap terrain -m 25 --verbose
