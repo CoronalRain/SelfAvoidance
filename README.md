@@ -2,11 +2,11 @@
 
 **by Troy P. Kling**
 
-<img src="http://troykling.com/files/selfavoidance.png" alt="Self-Avoiding Walk" width="300" height="300">
+<img src="http://troykling.com/files/selfavoidance.png" alt="Self-Avoiding Walk" width="239" height="239">
 
 ## Description
 
-A self-avoiding walk is a sequence a moves along a lattice path that does not visit the same point more than once.
+A self-avoiding walk (SAW) is a sequence a moves along a lattice path that does not visit the same point more than once. SAWs have many interesting properties and applications in computational physics and other areas of research.
 
 ## Installation
 
