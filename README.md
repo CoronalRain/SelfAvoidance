@@ -10,7 +10,7 @@ A self-avoiding walk (SAW) is a sequence a moves along a lattice path that does 
 
 ## Installation
 
-Start by ensuring that all dependencies are installed. The Mandelbrot Visualizer requires the numpy, matplotlib, and docopt packages.
+Start by ensuring that all dependencies are installed. The Self-Avoiding Walks Visualizer requires the numpy, matplotlib, and docopt packages.
 
 Next, clone this repository.
 
