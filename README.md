@@ -1,12 +1,10 @@
 # Self-Avoiding Walks Visualizer
 
-<center>
+**by Troy P. Kling**
+
 <img src="http://troykling.com/files/selfavoidance1.png" alt="Self-Avoiding Walk" width="200" height="200">
 <img src="http://troykling.com/files/selfavoidance2.png" alt="Self-Avoiding Walk" width="200" height="200">
 <img src="http://troykling.com/files/selfavoidance3.png" alt="Self-Avoiding Walk" width="200" height="200">
-
-**by Troy P. Kling**
-</center>
 
 ## Description
 
