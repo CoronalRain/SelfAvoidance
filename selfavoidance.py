@@ -2,9 +2,9 @@
 Self-Avoiding Paths Visualizer 1.0
 
 Usage:
-  selfavoiding.py [options]
-  selfavoiding.py (-h | --help)
-  selfavoiding.py --version
+  selfavoidance.py [options]
+  selfavoidance.py (-h | --help)
+  selfavoidance.py --version
 
 Options:
   -l --lower <int>     Sets a lower bound on the length of the random walk.
@@ -78,7 +78,7 @@ def update(data):
     counter += 1
     move = sequence[counter-2]
     if move != "Stay" and verbose:
-        print "%s," % move,
+        print(move,)
     if move == "North":
         i = i-1
     elif move == "East":
@@ -117,8 +117,8 @@ if __name__ == "__main__":
     fig, ax = plt.subplots()
     mat = ax.matshow(grid, cmap=plt.get_cmap(cmap), vmin=0, vmax=len(sequence))
     if verbose:
-        print "Number of moves: %s" % str(len(sequence)-1)
+        print("Number of moves: ", str(len(sequence)-1))
     if verbose:
-        print "Sequence of moves: ",
+        print("Sequence of moves: ",)
     ani = animation.FuncAnimation(fig, update, interval=ms, frames=len(sequence), blit=True, repeat=False)
     plt.show()
