@@ -16,7 +16,7 @@ Start by ensuring that all dependencies are installed. The Self-Avoiding Walks V
 
 Next, clone this repository.
 
-    > git clone https://gitlab.com/RedShift/SelfAvoidance.git
+    > git clone https://gitlab.com/CoronalRain/SelfAvoidance.git
 
 Once the repo is successfully cloned, navigate to the SelfAvoidance directory and install the package.
 
